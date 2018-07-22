@@ -13,6 +13,7 @@ import { MyApp } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPageModule } from '../pages/register/register.module';
+import { SorgPageModule } from '../pages/sorg/sorg.module';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,6 @@ import { RegisterPageModule } from '../pages/register/register.module';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-  ]
+      ]
 })
 export class AppModule {}
