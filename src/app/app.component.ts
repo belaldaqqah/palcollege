@@ -1,4 +1,4 @@
-import { ShoppingListPage } from './../pages/shopping-list/shopping-list';
+import { NewsfeedPage } from './../pages/newsfeed/newsfeed';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
@@ -18,7 +18,7 @@ export class MyApp {
       afAuth.authState.subscribe(
         user => {
           if (user) {
-            this.rootPage = ShoppingListPage;
+            this.rootPage = NewsfeedPage;
           } else {
             this.rootPage = LoginPage;
           }
