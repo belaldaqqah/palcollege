@@ -1,0 +1,36 @@
+page-sorg {
+
+}
+
+.img{
+   // margin-left: 2%;
+    width: 50%;
+    height: 50%;
+}
+.container {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Make the image responsive */
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style the button and place it in the middle of the container/image */ 
+  .btn {
+ 
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #4087f9;
+    color: white;
+    font-size: 150%;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+ .btn:hover {
+    background-color: rgb(54, 19, 255);
+  }
