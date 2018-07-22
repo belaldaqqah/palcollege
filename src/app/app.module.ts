@@ -13,8 +13,7 @@ import { MyApp } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPageModule } from '../pages/register/register.module';
-import { ShoppingListProvider } from '../providers/shopping-list/shopping-list';
-import { ShoppingListPageModule } from './../pages/shopping-list/shopping-list.module';
+import { SorgPageModule } from '../pages/sorg/sorg.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,7 @@ import { ShoppingListPageModule } from './../pages/shopping-list/shopping-list.m
     LoginPageModule,
     RegisterPageModule,
     NewsfeedPageModule,
-    ShoppingListPageModule,
+    SorgPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,8 +42,6 @@ import { ShoppingListPageModule } from './../pages/shopping-list/shopping-list.m
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    ShoppingListProvider,
-    ShoppingListProvider
-  ]
+      ]
 })
 export class AppModule {}

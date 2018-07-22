@@ -2,7 +2,7 @@ import { NewsfeedPage } from './../newsfeed/newsfeed';
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
 import {RegisterPage} from "../register/register";
-import { ShoppingListPage } from '../shopping-list/shopping-list';
+import { SorgPage } from '../sorg/sorg';
 
 @Component({
  selector: 'page-login',
@@ -26,7 +26,7 @@ export class LoginPage {
 
  // go to register page
  signUp() {
-  this.navCtrl.push(RegisterPage);
+  this.navCtrl.push(SorgPage);
  }
 
  ionViewDidLoad() {
