@@ -20,6 +20,7 @@ import { ShoppingListPageModule } from './../pages/shopping-list/shopping-list.m
   declarations: [
     MyApp,
     
+    
   ],
   imports: [
     BrowserModule,
