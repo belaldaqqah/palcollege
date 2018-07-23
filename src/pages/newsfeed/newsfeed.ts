@@ -17,17 +17,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsfeedPage {
 
-  constructor(public navCtrl: NavController,
+  constructor(
+    public navCtrl: NavController,
     private auth: AuthProvider,
     public navParams: NavParams) {
   }
 
   logOut() {
     this.auth.signOut().then(
-        () => {
-          this.navCtrl.setRoot(LoginPage);
-        }
-      );
+      () => {
+        this.navCtrl.setRoot(LoginPage);
+      }
+    );
   }
 
 }
