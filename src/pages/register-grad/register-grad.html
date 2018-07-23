@@ -23,7 +23,7 @@
       <ion-icon name="person" item-start class="text-primary"></ion-icon>
       Full Name
     </ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input [(ngModel)]="fullname" type="text" name="fullname"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -38,14 +38,14 @@
     <ion-icon name="md-calendar" item-start class="text-primary"></ion-icon>
    Birthdate
   </ion-label>
-  <ion-input [(ngModel)]="Birthdate" type="text" name="Birthdate"></ion-input>
+  <ion-input [(ngModel)]="birthdate" type="date" name="birthdate"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label floating>
     <ion-icon class="fas fa-university" item-start class="text-primary"></ion-icon>
    University
   </ion-label>
-  <ion-input [(ngModel)]="University" type="text" name="University"></ion-input>
+  <ion-input [(ngModel)]="university" type="text" name="university"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label floating>
