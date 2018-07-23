@@ -1,4 +1,4 @@
-import { RegisterPage } from './../RegisterStudent/RegisterStudent';
+import { RegisterPage } from './../registerStudent/registerStudent';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
