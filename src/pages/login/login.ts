@@ -29,6 +29,9 @@ export class LoginPage {
   this.navCtrl.push(SorgPage);
  }
 
+ ionViewDidLoad() {
+  console.log('ionViewDidLoad LoginPage');
+ }
  // login and go to home page
 
  login() {
@@ -43,11 +46,6 @@ export class LoginPage {
     error => this.loginError = error.message
   );
 }
-
-signup()    {
-  
-}
-
 
 
  forgotPass() {

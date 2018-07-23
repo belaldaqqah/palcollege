@@ -18,7 +18,7 @@ export class MyApp {
       afAuth.authState.subscribe(
         user => {
           if (user) {
-            this.rootPage = LoginPage;
+            this.rootPage = NewsfeedPage;
           } else {
             this.rootPage = LoginPage;
           }

@@ -1,3 +1,4 @@
+import { LoginPage } from './../../pages/login/login';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
@@ -9,7 +10,8 @@ export class AuthProvider {
  private user: firebase.User;
 
  constructor(public afAuth: AngularFireAuth,
-  private db: AngularFireDatabase) {
+  private db: AngularFireDatabase
+  ) {
    afAuth.authState.subscribe(user => {
      this.user = user;
    });
@@ -59,7 +61,7 @@ registerstudent(email, password, birthdate, fullname, highschool) {
   })
 }
  signOut() {
-  this.afAuth.auth.signOut();
+  return this.afAuth.auth.signOut();
 }
 
  getEmail() {
