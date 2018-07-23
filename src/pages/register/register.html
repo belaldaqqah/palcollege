@@ -1,0 +1,111 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding text-center>
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>Pal</strong> college
+      </h2>
+      <h4><strong>Student</strong> Sign Up</h4>
+    </div>
+
+    <!-- Login form -->
+    <form (ngSubmit)="register()" class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Full Name
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input [(ngModel)]="email" type="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="md-calendar" item-start class="text-primary"></ion-icon>
+         Birthdate
+        </ion-label>
+        <ion-input [(ngModel)]="Birthdate" type="date" name="Birthdate"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          High School
+        </ion-label>
+        <ion-input [(ngModel)]="highschool" type="text" name="highschool"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+      </ion-item>
+    </form>
+
+    <!--
+      
+<ion-content>
+ <form (ngSubmit)="signup()">
+   <ion-list inset>
+     <div class="form-error">{{signupError}}</div>
+     <ion-item>
+       <ion-input [(ngModel)]="email" type="text" placeholder="Email" name="email"></ion-input>
+     </ion-item>
+     <ion-item>
+       <ion-input [(ngModel)]="password" type="password" placeholder="Password" name="password"></ion-input>
+     </ion-item>
+   </ion-list>
+
+    -->
+    <div margin-top>
+      <button ion-button block color="dark" tappable (click)="registerstudent()">
+        SIGN UP
+      </button>
+
+      <p text-center ion-text color="secondary">Or Sign Up with:</p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-twitter">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-4>
+            <button ion-button icon-only block class="btn-gplus">
+              <ion-icon name="logo-googleplus"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="primary" tappable (click)="login()">I have an account</span>
+    </div>
+
+  </div>
+</ion-content>

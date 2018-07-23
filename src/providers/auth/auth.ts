@@ -23,7 +23,7 @@ export class AuthProvider {
    );
  }
 
- register(email, password, age) {
+ registergrad(email, password, birthdate, fullname, university,major) {
   return this.afAuth.auth.createUserWithEmailAndPassword(
     email,
     password,
@@ -31,9 +31,10 @@ export class AuthProvider {
     const user = userCredential.user;
     console.log(user.uid);
     return this.db.object("users/" + user.uid).set({
-      age: age,
-      first_name: "first name",
-      mlast_name: "last m"
+      Birthdate: birthdate,
+      Full_Name: fullname,
+      university: university,
+      major: major,
     })
   })
   // this.db.list("hello").push({
@@ -43,6 +44,19 @@ export class AuthProvider {
   // })
 }
 
+registerstudent(email, password, birthdate, fullname) {
+  return this.afAuth.auth.createUserWithEmailAndPassword(
+    email,
+    password,
+  ).then((userCredential) => {
+    const user = userCredential.user;
+    console.log(user.uid);
+    return this.db.object("users/" + user.uid).set({
+      Birthdate: birthdate,
+      Full_Name: fullname,
+    })
+  })
+}
  signOut() {
   this.afAuth.auth.signOut();
 }

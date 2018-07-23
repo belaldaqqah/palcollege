@@ -29,9 +29,6 @@ export class LoginPage {
   this.navCtrl.push(SorgPage);
  }
 
- ionViewDidLoad() {
-  console.log('ionViewDidLoad LoginPage');
- }
  // login and go to home page
 
  login() {
