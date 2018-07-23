@@ -28,7 +28,7 @@ import { RegisterStudentPageModule } from '../pages/registerStudent/registerStud
     LoginPageModule,
     RegisterStudentPageModule,
     NewsfeedPageModule,
-    SorgPageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
