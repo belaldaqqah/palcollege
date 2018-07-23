@@ -1,3 +1,4 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { NewsfeedPage } from './../newsfeed/newsfeed';
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
@@ -12,14 +13,13 @@ export class LoginPage {
   email: string;
   password: string;
   loginError: string;
-  nav: any;
-  auth: any;
 
  constructor(
    public navCtrl: NavController,
    public forgotCtrl: AlertController,
    public menu: MenuController,
-   public toastCtrl: ToastController) {
+   public toastCtrl: ToastController,
+  private auth: AuthProvider) {
 
    this.menu.swipeEnable(false);
  }
@@ -35,16 +35,20 @@ export class LoginPage {
  // login and go to home page
 
  login() {
-  if (!this.email) return;
-
+  if (!this.email ) {
+  return;
+  }
   const credentials = {
     email: this.email,
     password: this.password
   };
   this.auth.signInWithEmail(credentials).then(
     () => this.navCtrl.setRoot(NewsfeedPage),
-    error => this.loginError = error.message
-  );
+    (error) => this.loginError = error.message);
+    document.getElementById('errorbox').style.display ="inherit";
+
+    
+  ;
 }
 
 
