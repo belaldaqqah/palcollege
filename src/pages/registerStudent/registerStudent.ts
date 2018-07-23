@@ -7,7 +7,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @Component({
  selector: 'page-register',
- templateUrl: 'register.html'
+ templateUrl: 'registerStudent.html'
 })
 export class RegisterPage {
     signupError: string;
