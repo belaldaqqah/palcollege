@@ -4,17 +4,16 @@ import {LoginPage} from "../login/login";
 import { AuthProvider } from './../../providers/auth/auth';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-
 @Component({
  selector: 'page-register',
- templateUrl: 'register.html'
+ templateUrl: 'registerStudent.html'
 })
 export class RegisterPage {
     signupError: string;
     email: string;
     password: string;
     fullName: string;
-    age: string;
+    birthdate: string;
    
     constructor(
       public navCtrl: NavController, 
@@ -24,8 +23,9 @@ export class RegisterPage {
    
     
  // register and go to home page
- register() {
-   this.auth.register(this.email, this.password, this.age).then(
+ registerstudent() {
+   this.auth.registerstudent(this.email, this.password, this.birthdate, this.fullName)
+   .then(
     () => {
       this.navCtrl.setRoot(NewsfeedPage);
      }

@@ -1,7 +1,7 @@
 import { NewsfeedPage } from './../newsfeed/newsfeed';
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
-import {RegisterPage} from "../register/register";
+import {RegisterPage} from "../registerStudent/registerStudent";
 import { SorgPage } from '../sorg/sorg';
 
 @Component({
@@ -29,9 +29,6 @@ export class LoginPage {
   this.navCtrl.push(SorgPage);
  }
 
- ionViewDidLoad() {
-  console.log('ionViewDidLoad LoginPage');
- }
  // login and go to home page
 
  login() {

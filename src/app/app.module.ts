@@ -1,3 +1,5 @@
+import { RegisterGradPageModule } from './../pages/register-grad/register-grad.module';
+import { SorgPage } from './../pages/sorg/sorg';
 import { NewsfeedPageModule } from './../pages/newsfeed/newsfeed.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -14,12 +16,11 @@ import { AuthProvider } from '../providers/auth/auth';
 import { LoginPage } from '../pages/login/login';
 import { SorgPageModule } from '../pages/sorg/sorg.module';
 import { RegisterStudentPageModule } from '../pages/registerStudent/registerStudent.module';
+import { RegisterGradPage } from '../pages/register-grad/register-grad';
 
 @NgModule({
   declarations: [
     MyApp,
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -28,12 +29,15 @@ import { RegisterStudentPageModule } from '../pages/registerStudent/registerStud
     LoginPageModule,
     RegisterStudentPageModule,
     NewsfeedPageModule,
-
+    SorgPageModule,
+    RegisterGradPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     LoginPage,
+    SorgPage,
+    RegisterGradPage,
   ],
   providers: [
     StatusBar,
