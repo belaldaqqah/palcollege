@@ -19,7 +19,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterGradPage {
   signupError: string;
-  fullName: string;
+  fullname: string;
   email: string;
   password: string;
   university: string;
@@ -32,7 +32,7 @@ export class RegisterGradPage {
      public navParams: NavParams) {
   }
   registergrad() {
-    this.auth.registergrad(this.email, this.password, this.birthdate, this.fullName, this.Major, this.university)
+    this.auth.registergrad(this.email, this.password, this.birthdate, this.fullname, this.Major, this.university)
     .then(() => {
        this.navCtrl.setRoot(NewsfeedPage);
       }

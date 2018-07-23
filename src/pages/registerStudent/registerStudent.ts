@@ -13,8 +13,9 @@ export class RegisterPage {
     signupError: string;
     email: string;
     password: string;
-    fullName: string;
-    birthdate: string; 
+    fullname: string;
+    birthdate: string;
+    highschool: string;
    
     constructor(
       public navCtrl: NavController, 
@@ -24,8 +25,9 @@ export class RegisterPage {
    
     
  // register and go to home page
- register() {
-   this.auth.registerstudent(this.email, this.password, this.birthdate, this.fullName).then(
+ registerstudent() {
+   this.auth.registerstudent(this.email, this.password, this.birthdate, this.fullname, this.highschool)
+   .then(
     () => {
       this.navCtrl.setRoot(NewsfeedPage);
      }

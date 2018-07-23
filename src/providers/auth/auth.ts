@@ -44,7 +44,7 @@ export class AuthProvider {
   // })
 }
 
-registerstudent(email, password, birthdate, fullname) {
+registerstudent(email, password, birthdate, fullname, highschool) {
   return this.afAuth.auth.createUserWithEmailAndPassword(
     email,
     password,
@@ -54,6 +54,7 @@ registerstudent(email, password, birthdate, fullname) {
     return this.db.object("users/" + user.uid).set({
       Birthdate: birthdate,
       Full_Name: fullname,
+      Highschool: highschool,
     })
   })
 }
