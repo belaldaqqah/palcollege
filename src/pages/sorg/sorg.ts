@@ -1,4 +1,4 @@
-import { RegisterPage } from './../register/register';
+import { RegisterStudentPage } from './../RegisterStudent/RegisterStudent';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -24,7 +24,7 @@ export class SorgPage {
   }
 
   students() {
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.push(RegisterStudentPage);
   }
   graduate() {
     this.navCtrl.push(SorgPage);
