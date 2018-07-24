@@ -1,3 +1,5 @@
+import { TabsPageModule } from './../pages/tabs/tabs.module';
+import { ProfilePageModule } from './../pages/profile/profile.module';
 import { RegisterGradPageModule } from './../pages/register-grad/register-grad.module';
 import { SorgPage } from './../pages/sorg/sorg';
 import { NewsfeedPageModule } from './../pages/newsfeed/newsfeed.module';
@@ -17,6 +19,9 @@ import { LoginPage } from '../pages/login/login';
 import { SorgPageModule } from '../pages/sorg/sorg.module';
 import { RegisterStudentPageModule } from '../pages/registerStudent/registerStudent.module';
 import { RegisterGradPage } from '../pages/register-grad/register-grad';
+import { PostPageModule } from '../pages/post/post.module';
+import { HttpModule } from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { RegisterGradPage } from '../pages/register-grad/register-grad';
     NewsfeedPageModule,
     SorgPageModule,
     RegisterGradPageModule,
+    ProfilePageModule, 
+    PostPageModule,
+    HttpModule,
+    TabsPageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

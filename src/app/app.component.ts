@@ -1,3 +1,4 @@
+import { TabsPage } from './../pages/tabs/tabs';
 import { NewsfeedPage } from './../pages/newsfeed/newsfeed';
 import { LoginPage } from './../pages/login/login';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -5,12 +6,13 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = ProfilePage;
   constructor(platform: Platform, afAuth: AngularFireAuth, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -18,7 +20,7 @@ export class MyApp {
       afAuth.authState.subscribe(
         user => {
           if (user) {
-            this.rootPage = NewsfeedPage;
+            this.rootPage = TabsPage;
           } else {
             this.rootPage = LoginPage;
           }

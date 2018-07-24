@@ -1,3 +1,4 @@
+import { TabsPage } from './../tabs/tabs';
 import { AuthProvider } from './../../providers/auth/auth';
 import { NewsfeedPage } from './../newsfeed/newsfeed';
 import {Component} from "@angular/core";
@@ -19,7 +20,7 @@ export class LoginPage {
    public forgotCtrl: AlertController,
    public menu: MenuController,
    public toastCtrl: ToastController,
-  private auth: AuthProvider) {
+   private auth: AuthProvider) {
 
    this.menu.swipeEnable(false);
  }
@@ -43,7 +44,7 @@ export class LoginPage {
     password: this.password
   };
   this.auth.signInWithEmail(credentials).then(
-    () => this.navCtrl.setRoot(NewsfeedPage),
+    () => this.navCtrl.setRoot(TabsPage),
     (error) => this.loginError = error.message);
     document.getElementById('errorbox').style.display ="inherit";
 
@@ -75,7 +76,7 @@ export class LoginPage {
          handler: data => {
            console.log('Send clicked');
            let toast = this.toastCtrl.create({
-             message: 'Email was sended successfully',
+             message: 'Email was sent successfully',
              duration: 3000,
              position: 'top',
              cssClass: 'dark-trans',
