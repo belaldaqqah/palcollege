@@ -23,9 +23,8 @@ export class TabsPage {
 
  tab1Root = NewsfeedPage;
  tab2Root = NotificationsPage;
- tab3Root = PostPage;
- tab4Root = AboutUsPage;
- tab5Root = ProfilePage;
+ tab4Root = ProfilePage;
+ tab5Root = AboutUsPage;
 
  public token;
  loading: any;
@@ -46,7 +45,7 @@ export class TabsPage {
  
  
  openModal() {
-   const myModal= this.modal.create('ModalPage', {},{cssClass:"mymodal"} );
+   const myModal= this.modal.create('PostPage', {},{cssClass:"mymodal"} );
    myModal.present();
    }
 

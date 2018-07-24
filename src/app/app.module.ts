@@ -1,3 +1,6 @@
+import { AboutUsPageModule } from './../pages/about-us/about-us.module';
+import { AboutUsPage } from './../pages/about-us/about-us';
+import { NotificationsPageModule } from './../pages/notifications/notifications.module';
 import { TabsPageModule } from './../pages/tabs/tabs.module';
 import { ProfilePageModule } from './../pages/profile/profile.module';
 import { RegisterGradPageModule } from './../pages/register-grad/register-grad.module';
@@ -39,8 +42,9 @@ import { HttpModule } from '@angular/http';
     ProfilePageModule, 
     PostPageModule,
     HttpModule,
-    TabsPageModule
-
+    TabsPageModule,
+    NotificationsPageModule,
+    AboutUsPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

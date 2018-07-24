@@ -21,7 +21,6 @@ export class LoginPage {
    public menu: MenuController,
    public toastCtrl: ToastController,
    private auth: AuthProvider) {
-
    this.menu.swipeEnable(false);
  }
 
