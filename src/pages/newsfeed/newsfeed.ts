@@ -41,14 +41,7 @@ export class NewsfeedPage {
     * Ionic pages and navigation.
     */
        
-     logOut() {
-       this.auth.signOut().then(
-         () => {
-           this.navCtrl.setRoot(LoginPage);
-         }
-       );
-     }
-
+     
  
 
  
