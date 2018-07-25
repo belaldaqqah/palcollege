@@ -60,6 +60,8 @@ registerstudent(email, password, birthdate, fullname, highschool) {
     })
   })
 }
+
+post(title, content)
  signOut() {
   return this.afAuth.auth.signOut();
 }
