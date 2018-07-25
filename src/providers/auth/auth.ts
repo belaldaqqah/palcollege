@@ -25,41 +25,39 @@ export class AuthProvider {
    );
  }
 
- registergrad(email, password, birthdate, fullname, university,major) {
+ registergrad(credentials, birthdate, extraUserInfo) {
   return this.afAuth.auth.createUserWithEmailAndPassword(
-    email,
-    password,
+    credentials.email,
+    credentials.password,
   ).then((userCredential) => {
     const user = userCredential.user;
     console.log(user.uid);
     return this.db.object("users/" + user.uid).set({
       Birthdate: birthdate,
-      Full_Name: fullname,
-      university: university,
-      major: major,
+      Full_Name: extraUserInfo.fullname,
+      university: extraUserInfo.university,
+      major: extraUserInfo.major,
     })
   })
-  // this.db.list("hello").push({
-  //   email:
-  //   username:
-  //   password:
-  // })
+
 }
 
-registerstudent(email, password, birthdate, fullname, highschool) {
+registerstudent(credentials, birthdate, extraUserInfo) {
   return this.afAuth.auth.createUserWithEmailAndPassword(
-    email,
-    password,
+    credentials.email,
+    credentials.password,
   ).then((userCredential) => {
     const user = userCredential.user;
     console.log(user.uid);
     return this.db.object("users/" + user.uid).set({
       Birthdate: birthdate,
-      Full_Name: fullname,
-      Highschool: highschool,
+      Full_Name: extraUserInfo.fullname,
+      Highschool: extraUserInfo.highschool,
     })
   })
 }
+
+post(title, content)
  signOut() {
   return this.afAuth.auth.signOut();
 }
@@ -67,6 +65,17 @@ registerstudent(email, password, birthdate, fullname, highschool) {
  getEmail() {
   return this.user && this.user.email;
 }
+
+
+getUid() {
+  return this.user && this.user.uid;
+}
+
+getExtraUserData() {
+  return this.db.object('users/' + this.getUid()).valueChanges();
+}
+
+
 
 
 }

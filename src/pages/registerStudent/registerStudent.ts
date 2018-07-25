@@ -27,18 +27,25 @@ export class RegisterPage {
 
   // register and go to home page
   registerstudent() {
-    this.auth.registerstudent(
-      this.email,
-      this.password,
-      this.birthdate,
-      this.fullname,
-      this.highschool)
+    const credentials = {
+			email: this.email,
+			password: this.password
+    };
+    const extraUserInfo = {
+      fullname: this.fullname,
+      highschool:this.highschool,
+    };
+    this.auth.registergrad(credentials, this.birthdate, extraUserInfo)
       .then(
         () => {
           this.navCtrl.setRoot(TabsPage);
+          error => this.signupError = error.message
         }
       );
   }
+
+
+
   // go to login page
   login() {
     this.navCtrl.setRoot(LoginPage);

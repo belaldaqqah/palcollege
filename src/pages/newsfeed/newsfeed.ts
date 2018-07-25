@@ -1,10 +1,12 @@
+import { Observable } from 'rxjs';
+import { PostPage } from './../post/post';
+import { PostProvider } from './../../providers/post/post';
 import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, ModalController } from 'ionic-angular';
 import { IonicPage, NavParams } from 'ionic-angular';
 import { LoginPage } from './../login/login';
 import {Http} from '@angular/http';
-import 'rxjs';
 
  
 
@@ -16,40 +18,50 @@ import 'rxjs';
  selector: 'page-newsfeed',
  templateUrl: 'newsfeed.html',
 })
-export class NewsfeedPage {
-
-   
+export class NewsfeedPage {   
    cards: any;
- 
+   post: any;
+   posts: Observable<any>;
+   currentUserInfo: Observable<any>
+   
    
    constructor(
-       public navCtrl: NavController,
-       private http: Http,
-       private alertCtrl: AlertController,
-       public loadingCtrl: LoadingController,
-       private auth: AuthProvider,
-       public navParams: NavParams
-       
-
-   ) {this.cards = new Array(10);}
- 
+      public navCtrl: NavController,
+      private http: Http,
+      private alertCtrl: AlertController,
+      public loadingCtrl: LoadingController,
+      private auth: AuthProvider,
+      public navParams: NavParams,
+      private PostProvider: PostProvider){
+        this.cards = new Array(10);
+      this.posts = PostProvider.getPosts();
+      this.currentUserInfo = auth.getExtraUserData();
+      const key = navParams.get('key');
+      PostProvider.getPostsByKey(key).subscribe((post) => {
+        if (!post) {
+          this.post = null;
+        } else {
+          this.post = post.payload.val();
+        }
+      });
+    }
+  
+  getPosts() {
+    this.PostProvider.getPosts();
+  }
+  selectPost(key) {
+    this.navCtrl.push(PostPage, {
+      key
+    });
+  }
+      
+    logOut() {
+      this.auth.signOut().then(
+        () => {
+          this.navCtrl.setRoot(LoginPage);
+        }
+      );
+    }
    
-   /**
-    * Generated class for the NewsfeedPage page.
-    *
-    * See https://ionicframework.com/docs/components/#navigation for more info on
-    * Ionic pages and navigation.
-    */
-       
-     
- 
-
- 
-
    
    }
-
-   
-
-    //test
-     //  this.stripe.setPublishableKey(' pk_test_KFuKDO7ayBQ3tw9nsQAYGls5');

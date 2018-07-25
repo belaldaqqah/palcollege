@@ -33,11 +33,25 @@ export class RegisterGradPage {
      public navParams: NavParams) {
   }
   registergrad() {
-    this.auth.registergrad(this.email, this.password, this.birthdate, this.fullname, this.Major, this.university)
+    const credentials = {
+			email: this.email,
+			password: this.password
+    };
+    const extraUserInfo = {
+      fullname: this.fullname,
+      university:this.university,
+      major:this.Major,
+    };
+    this.auth.registergrad(credentials, this.birthdate, extraUserInfo)
     .then(() => {
        this.navCtrl.setRoot(TabsPage);
+       error => this.signupError = error.message
       }
      );
   }
+
+
+			
+
 }
 

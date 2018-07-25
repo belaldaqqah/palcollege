@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { AboutUsPageModule } from './../pages/about-us/about-us.module';
 import { AboutUsPage } from './../pages/about-us/about-us';
 import { NotificationsPageModule } from './../pages/notifications/notifications.module';
@@ -24,6 +25,7 @@ import { RegisterStudentPageModule } from '../pages/registerStudent/registerStud
 import { RegisterGradPage } from '../pages/register-grad/register-grad';
 import { PostPageModule } from '../pages/post/post.module';
 import { HttpModule } from '@angular/http';
+import { PostProvider } from '../providers/post/post';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { HttpModule } from '@angular/http';
     TabsPageModule,
     NotificationsPageModule,
     AboutUsPageModule,
+    HttpClientModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,6 +64,7 @@ import { HttpModule } from '@angular/http';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
+    PostProvider,
       ]
 })
 export class AppModule {}
