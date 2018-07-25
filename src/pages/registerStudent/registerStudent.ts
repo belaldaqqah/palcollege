@@ -1,3 +1,4 @@
+import { TabsPage } from './../tabs/tabs';
 import { NewsfeedPage } from './../newsfeed/newsfeed';
 import { Component } from "@angular/core";
 import { LoginPage } from "../login/login";
@@ -34,7 +35,7 @@ export class RegisterPage {
       this.highschool)
       .then(
         () => {
-          this.navCtrl.setRoot(NewsfeedPage);
+          this.navCtrl.setRoot(TabsPage);
         }
       );
   }
