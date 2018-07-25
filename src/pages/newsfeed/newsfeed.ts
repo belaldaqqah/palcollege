@@ -8,16 +8,18 @@ import { IonicPage, NavParams } from 'ionic-angular';
 import { LoginPage } from './../login/login';
 import {Http} from '@angular/http';
 
+ 
+
+
+
 
 @IonicPage()
 @Component({
  selector: 'page-newsfeed',
  templateUrl: 'newsfeed.html',
 })
-export class NewsfeedPage {
-   public token;
-   loading: any;
-   public money:number=0;
+export class NewsfeedPage {   
+   cards: any;
    post: any;
    posts: Observable<any>;
    currentUserInfo: Observable<any>
@@ -31,6 +33,7 @@ export class NewsfeedPage {
       private auth: AuthProvider,
       public navParams: NavParams,
       private PostProvider: PostProvider){
+        this.cards = new Array(10);
       this.posts = PostProvider.getPosts();
       this.currentUserInfo = auth.getExtraUserData();
       const key = navParams.get('key');
@@ -62,8 +65,3 @@ export class NewsfeedPage {
    
    
    }
-
-   
-
-    //test
-     //  this.stripe.setPublishableKey(' pk_test_KFuKDO7ayBQ3tw9nsQAYGls5');
