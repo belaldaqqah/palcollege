@@ -16,8 +16,46 @@
       Log Off
     </button>
   </ion-buttons>
-
 </ion-header>
+<ion-content>
+<ion-card *ngFor="let card of cards">
+
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="https://avatars.io/facebook/joshua.morony" />
+    </ion-avatar>
+    <h2>Josh Morony</h2>
+    <p>November 5, 1955</p>
+  </ion-item>
+
+
+
+  <ion-card-content>
+    I'm sharing with you today my exp in Stanford univ, which was a great exp jkkiuhnjhngyumko
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+</ion-content>
 
 
 <ion-content padding>

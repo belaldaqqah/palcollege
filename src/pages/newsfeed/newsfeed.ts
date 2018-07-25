@@ -6,6 +6,10 @@ import { LoginPage } from './../login/login';
 import {Http} from '@angular/http';
 import 'rxjs';
 
+ 
+
+
+
 
 @IonicPage()
 @Component({
@@ -13,9 +17,10 @@ import 'rxjs';
  templateUrl: 'newsfeed.html',
 })
 export class NewsfeedPage {
-   public token;
-   loading: any;
-   public money:number=0;
+
+   
+   cards: any;
+ 
    
    constructor(
        public navCtrl: NavController,
@@ -26,7 +31,7 @@ export class NewsfeedPage {
        public navParams: NavParams
        
 
-   ) {}
+   ) {this.cards = new Array(10);}
  
    
    /**
@@ -43,6 +48,11 @@ export class NewsfeedPage {
          }
        );
      }
+
+ 
+
+ 
+
    
    }
 
