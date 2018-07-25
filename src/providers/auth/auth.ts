@@ -56,6 +56,8 @@ registerstudent(credentials, birthdate, extraUserInfo) {
     })
   })
 }
+
+post(title, content)
  signOut() {
   return this.afAuth.auth.signOut();
 }
