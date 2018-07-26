@@ -20,6 +20,7 @@ export class PostPage {
  fullname:string;
  currentUserInfo: Observable<any>
  content: string;
+ time: string
  @HostListener('input', ['$event.target'])
  onInput(textArea:HTMLTextAreaElement):void {
    this.adjust();
@@ -47,6 +48,8 @@ adjust():void {
  addPost(name) {
     this.auth.getExtraUserData().pipe(take(1)).subscribe((userInfo) => {
       let fullname;
+      let date = new Date().toLocaleDateString();
+      console.log(date);
       if (userInfo == null) {
         fullname = this.auth.getEmail();
       } else {
@@ -56,6 +59,8 @@ adjust():void {
         fullname: fullname,
         title: this.title,
         content: this.content,
+        time: date
+        
       }).then((post) => {
           this.closeModal(true);
         });
