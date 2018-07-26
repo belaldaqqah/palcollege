@@ -17,14 +17,14 @@
 
     <ion-item (click)= "selectPost(post.key)" >
       <ion-avatar item-start>
-          <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" />
+          <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" style="width: 4em; height: 4em">
         </ion-avatar>
       <h2>{{ post.payload.val().title}}</h2>
       <p>{{ post.payload.val().fullname}}</p>
     </ion-item>
 
 
-    <ion-card-content (click)= "selectPost(post.key)" >
+    <ion-card-content >
       <p>{{ post.payload.val().content}}</p>
     </ion-card-content>
 
