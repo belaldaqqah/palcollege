@@ -30,6 +30,12 @@ export class ProfilePage {
   returnUser() {
     this.auth.getEmail()
   }
-
+  logOut() {
+    this.auth.signOut().then(
+      () => {
+        this.navCtrl.setRoot(LoginPage);
+      }
+    );
+  }
 
 }

@@ -56,13 +56,7 @@ export class NewsfeedPage {
     });
   }
       
-    logOut() {
-      this.auth.signOut().then(
-        () => {
-          this.navCtrl.setRoot(LoginPage);
-        }
-      );
-    }
+
     
    
    

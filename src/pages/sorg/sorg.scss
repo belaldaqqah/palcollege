@@ -3,7 +3,7 @@ page-sorg {
 }
 
 .img{
-   // margin-left: 2%;
+   float: left;;
     width: 50%;
     height: 50%;
 }
@@ -29,6 +29,9 @@ page-sorg {
     padding: 12px 24px;
     cursor: pointer;
     border-radius: 5px;
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 85%;
   }
   
  .btn:hover {
