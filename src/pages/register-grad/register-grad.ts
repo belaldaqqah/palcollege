@@ -26,6 +26,7 @@ export class RegisterGradPage {
   university: string;
   birthdate: string;
   Major: string
+  bio:string
 
   constructor(
     public navCtrl: NavController, 
@@ -41,6 +42,7 @@ export class RegisterGradPage {
       fullname: this.fullname,
       university:this.university,
       major:this.Major,
+      bio:this.bio
     };
     this.auth.registergrad(credentials, this.birthdate, extraUserInfo)
     .then(() => {
