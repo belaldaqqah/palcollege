@@ -34,11 +34,11 @@
         <ion-input [(ngModel)]="title" type="text" placeholder="Title"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="content" type="text" placeholder="Share your experience"></ion-input>
+        <ion-textarea autosize [(ngModel)]="content" type="text" placeholder="Share your experience"></ion-textarea>
       </ion-item>
     </ion-col>
     <ion-col>
-      <button ion-button (click)="addPost()">Post!</button>
+      <button ion-button style="margin-left: 60%;" (click)="addPost()">Post!</button>
     </ion-col>
   </ion-row>
 
