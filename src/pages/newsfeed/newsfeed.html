@@ -15,49 +15,39 @@
 </ion-header>
 
 <ion-content>
-  <ion-card  *ngFor="let post of (posts | async)?.slice().reverse()">
+
+  <ion-card *ngFor="let post of (posts | async)?.slice().reverse()">
 
     <ion-item>
-      <ion-avatar item-left>
-        <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" />
-      </ion-avatar>
-      <h3>{{ post.payload.val().fullname }}</h3>
-      <ion-card-title>{{ post.payload.val().title }}</ion-card-title>
+      <ion-avatar item-start>
+          <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" />
+        </ion-avatar>
+      <h2>{{ post.payload.val().title}}</h2>
+      <p>{{ post.payload.val().fullname}}</p>
+    </ion-item>
 
 
-        <ion-card-content>
-          <p>
-          {{ post.payload.val().content}}
-          </p>
-        </ion-card-content>
-        
-      <ion-item-options side="right">
-        <button ion-button color="danger" icon-only (click)="removePost(post.key)">
-          <ion-icon name="trash"></ion-icon>
-        </button>
-      </ion-item-options>
-  </ion-item>
-
-
+    <ion-card-content>
+      <p>{{ post.payload.val().content}}
+      </p>
+    </ion-card-content>
 
     <ion-row>
       <ion-col>
-        <button ion-button icon-left clear small>
+        <button ion-button icon-start clear small>
           <ion-icon name="thumbs-up"></ion-icon>
           <div>12 Likes</div>
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-left clear small>
+        <button ion-button icon-start clear small>
           <ion-icon name="text"></ion-icon>
           <div>4 Comments</div>
         </button>
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-          <ion-input type="time" [(ngModel)]='time' 
-          (change)='onChangeTime($event.target.value)'>
-       </ion-input>
+          11h ago
         </ion-note>
       </ion-col>
     </ion-row>
