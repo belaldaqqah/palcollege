@@ -53,6 +53,7 @@ registerstudent(credentials, birthdate, extraUserInfo) {
       Birthdate: birthdate,
       Full_Name: extraUserInfo.fullname,
       Highschool: extraUserInfo.highschool,
+      
     })
   })
 }
@@ -66,9 +67,6 @@ getEmail() {
   return this.user && this.user.email;
 }
 
-getUni()  {
-  return this.user && this.user.university;
-}
 
 getUid() {
   return this.user && this.user.uid;
@@ -77,8 +75,11 @@ getUid() {
 getExtraUserData() {
   return this.db.object('users/' + this.getUid()).valueChanges();
 }
-
-
-
+ 
 
 }
+
+
+
+
+

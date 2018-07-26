@@ -55,14 +55,7 @@ export class NewsfeedPage {
       key
     });
   }
-      
-    logOut() {
-      this.auth.signOut().then(
-        () => {
-          this.navCtrl.setRoot(LoginPage);
-        }
-      );
-    }
+
     
    
    
