@@ -23,6 +23,7 @@ export class NewsfeedPage {
    post: any;
    posts: Observable<any>;
    currentUserInfo: Observable<any>
+  
    
    
    constructor(
@@ -62,6 +63,7 @@ export class NewsfeedPage {
         }
       );
     }
+    
    
    
    }

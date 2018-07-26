@@ -25,6 +25,7 @@ export class PostPage {
   private view: ViewController){
   this.posts = PostProvider.getPosts(),
   this.currentUserInfo = auth.getExtraUserData() 
+  
  }
 
 
@@ -40,6 +41,7 @@ export class PostPage {
         fullname: fullname,
         title: this.title,
         content: this.content,
+        
       }).then((post) => {
           this.closeModal(true);
         });
