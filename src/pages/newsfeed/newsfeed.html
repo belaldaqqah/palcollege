@@ -20,13 +20,12 @@
           <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" />
         </ion-avatar>
       <h2>{{ post.payload.val().title}}</h2>
-      <p>{{ post.payload.val().fullname}}, {{ post.payload.val().time}}</p>
+      <p>{{ post.payload.val().fullname}} at {{ post.payload.val().time}}</p>
     </ion-item>
 
 
     <ion-card-content>
-      <p>{{ post.payload.val().content}}
-      </p>
+      <p>{{ post.payload.val().content}}</p>
     </ion-card-content>
 
     <ion-row>
@@ -42,11 +41,7 @@
           <div>4 Comments</div>
         </button>
       </ion-col>
-      <!-- <ion-col center text-center>
-        <ion-note>
-          {{ post.payload.val().time}}
-        </ion-note>
-      </ion-col> -->
+
     </ion-row>
   </ion-card>
 </ion-content>

@@ -49,6 +49,7 @@ adjust():void {
     this.auth.getExtraUserData().pipe(take(1)).subscribe((userInfo) => {
       let fullname;
       let date = new Date().toLocaleDateString();
+      let time = new Date().toLocaleTimeString();
       console.log(date);
       if (userInfo == null) {
         fullname = this.auth.getEmail();
@@ -59,7 +60,7 @@ adjust():void {
         fullname: fullname,
         title: this.title,
         content: this.content,
-        time: date
+        time: time+" on "+date
         
       }).then((post) => {
           this.closeModal(true);
