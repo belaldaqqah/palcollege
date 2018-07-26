@@ -1,3 +1,4 @@
+import { CommentsPageModule } from './../pages/comments/comments.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutUsPageModule } from './../pages/about-us/about-us.module';
 import { AboutUsPage } from './../pages/about-us/about-us';
@@ -48,6 +49,7 @@ import { PostProvider } from '../providers/post/post';
     NotificationsPageModule,
     AboutUsPageModule,
     HttpClientModule,
+    CommentsPageModule
 
   ],
   bootstrap: [IonicApp],
