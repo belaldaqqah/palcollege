@@ -27,19 +27,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-item>
+    <ion-input [(ngModel)]="title" type="text" placeholder="Title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea autosize [(ngModel)]="content" type="text" placeholder="Share your experience"></ion-textarea>
+  </ion-item>
   <ion-row>
-    <ion-col col-9>
-      <ion-item>
-        <ion-input [(ngModel)]="title" type="text" placeholder="Title"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-textarea autosize [(ngModel)]="content" type="text" placeholder="Share your experience"></ion-textarea>
-      </ion-item>
-    </ion-col>
     <ion-col>
-      <button ion-button style="margin-left: 60%;" (click)="addPost()">Post!</button>
+        <button padding ion-button (click)="addPost()" style="width: 100%; margin-top: 3em">Post!</button>
     </ion-col>
   </ion-row>
-
+  
 </ion-content>

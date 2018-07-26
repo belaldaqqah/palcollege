@@ -5,7 +5,7 @@ import { IonicPage, NavController, ViewController } from 'ionic-angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import {ElementRef, HostListener, Directive, OnInit} from '@angular/core';
-
+import * as moment from 'moment';
 
 @IonicPage()
 @Component({
@@ -60,7 +60,7 @@ adjust():void {
         fullname: fullname,
         title: this.title,
         content: this.content,
-        time: time+" on "+date
+        time: moment().format('MMMM Do, h:mm a')
         
       }).then((post) => {
           this.closeModal(true);
