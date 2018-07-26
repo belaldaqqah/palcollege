@@ -15,7 +15,7 @@
       </h2>
     </div>
     
-   <div class="alert-box error" id="errorbox">
+   <div *ngIf="loginError" class="alert-box error" id="errorbox">
         <ion-icon name="md-close-circle" style="color: red"></ion-icon>
           {{loginError}}</div>
     <!-- Login form -->

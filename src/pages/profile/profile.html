@@ -38,8 +38,8 @@
       </ion-row>
     </ion-card>
     <ion-list class="profile-detail">
-        <ion-item icon-left>
-            <h4><ion-icon name="quote" *ngIf="userData && userData.bio"></ion-icon>Bio</h4>
+        <ion-item  *ngIf="userData && userData.bio" icon-left>
+            <h4><ion-icon name="quote"></ion-icon>Bio</h4>
             <p> {{userData.bio}} </p>
         </ion-item>
         <ion-item *ngIf="userData && userData.university" icon-left>

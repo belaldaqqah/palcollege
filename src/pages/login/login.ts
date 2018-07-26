@@ -45,7 +45,6 @@ export class LoginPage {
   this.auth.signInWithEmail(credentials).then(
     () => this.navCtrl.setRoot(TabsPage),
     (error) => this.loginError = error.message);
-    document.getElementById('errorbox').style.display ="inherit";
 
     
   ;
