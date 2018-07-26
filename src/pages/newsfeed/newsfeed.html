@@ -24,7 +24,7 @@
     </ion-item>
 
 
-    <ion-card-content >
+    <ion-card-content (click)= "selectPost(post.key)">
       <p>{{ post.payload.val().content}}</p>
     </ion-card-content>
 

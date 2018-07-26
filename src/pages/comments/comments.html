@@ -45,23 +45,33 @@
     <p text-right >{{ post.time}}</p>
   </ion-card>
 
+
+    <ion-item>
+      <ion-textarea autosize [(ngModel)]="content" type="text" placeholder="Add a comment"></ion-textarea>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+          <button padding ion-button (click)="addComment()" style="width: 100%; margin-top: 3em">Comment!</button>
+      </ion-col>
+    </ion-row>
+  
  
 
 
-    <ion-card *ngFor="let post of (posts | async)?.slice().reverse()" style="width: 20em; align-content: center;">
+    <ion-card *ngFor="let comment of (comments | async)?.slice().reverse()" style="width: 15em; margin-left: 4em;">
 
       <ion-item >
         <ion-avatar item-start>
           <img src="http://cdn.onlinewebfonts.com/svg/img_454313.png" />
         </ion-avatar>
-        <p>{{ post.payload.val().fullname}} commented</p>
+        <p><strong>{{ comment.payload.val().fullname}}</strong> commented</p>
       </ion-item>
       
       <ion-card-content >
-        <p>Comment content</p>
+        <p>{{comment.payload.val().content}}</p>
       </ion-card-content>
 
 
-      <p> comment time</p>
+      <p> {{comment.payload.val().time}}</p>
     </ion-card>
 </ion-content>

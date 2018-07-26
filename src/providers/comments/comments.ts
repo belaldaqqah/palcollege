@@ -13,6 +13,7 @@ export class CommentsProvider {
     return this.db.list('comments/' + postKey).push({
       fullname: comment.fullname,
       content: comment.content,
+      time:comment.time
     });
   }
 }

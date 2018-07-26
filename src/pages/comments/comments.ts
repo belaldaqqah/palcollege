@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+import * as moment from 'moment';
+
 
 @IonicPage()
 @Component({
@@ -49,7 +51,8 @@ export class CommentsPage {
       }
       const newComment = {
         fullname: name,
-        content: this.content
+        content: this.content,
+        time: moment().format('MMMM Do, h:mm a')
       };
       this.CommentsProvider.addComment(this.postKey, newComment);
     });
