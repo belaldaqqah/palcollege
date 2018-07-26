@@ -11,9 +11,6 @@ import {Http} from '@angular/http';
 
  
 
-
-
-
 @IonicPage()
 @Component({
  selector: 'page-newsfeed',
@@ -35,7 +32,7 @@ export class NewsfeedPage {
       private auth: AuthProvider,
       public navParams: NavParams,
       private PostProvider: PostProvider){
-        this.cards = new Array(10);
+      this.cards = new Array(10);
       this.posts = PostProvider.getPosts();
       this.currentUserInfo = auth.getExtraUserData();
       const key = navParams.get('key');
@@ -50,8 +47,5 @@ export class NewsfeedPage {
       key
     });
   }
-
-    
    
-   
-   }
+}

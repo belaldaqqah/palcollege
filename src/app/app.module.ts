@@ -27,6 +27,7 @@ import { RegisterGradPage } from '../pages/register-grad/register-grad';
 import { PostPageModule } from '../pages/post/post.module';
 import { HttpModule } from '@angular/http';
 import { PostProvider } from '../providers/post/post';
+import { CommentsProvider } from '../providers/comments/comments';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { PostProvider } from '../providers/post/post';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     PostProvider,
+    CommentsProvider,
       ]
 })
 export class AppModule {}
