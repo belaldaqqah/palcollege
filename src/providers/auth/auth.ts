@@ -62,10 +62,13 @@ registerstudent(credentials, birthdate, extraUserInfo) {
   return this.afAuth.auth.signOut();
 }
 
- getEmail() {
+getEmail() {
   return this.user && this.user.email;
 }
 
+getUni()  {
+  return this.user && this.user.university;
+}
 
 getUid() {
   return this.user && this.user.uid;
