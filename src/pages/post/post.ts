@@ -31,7 +31,6 @@ export class PostPage {
   public element:ElementRef){
   this.posts = PostProvider.getPosts(),
   this.currentUserInfo = auth.getExtraUserData() 
-  
  }
 
  ngOnInit():void {
@@ -57,7 +56,6 @@ adjust():void {
         fullname: fullname,
         title: this.title,
         content: this.content,
-        
       }).then((post) => {
           this.closeModal(true);
         });
