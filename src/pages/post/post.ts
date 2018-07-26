@@ -18,9 +18,9 @@ export class PostPage {
  Post: string;
  title: string;
  fullname:string;
- currentUserInfo: Observable<any>
+ currentUserInfo: Observable<any>;
  content: string;
- time: string
+ time: string;
  @HostListener('input', ['$event.target'])
  onInput(textArea:HTMLTextAreaElement):void {
    this.adjust();
@@ -74,10 +74,6 @@ adjust():void {
 
 closeModal(didPost = false){
   this.view.dismiss(didPost);
-}
-
-ionViewDidLoad() {
-  console.log('ionViewDidLoad ShoppingListPage');
 }
 
 
