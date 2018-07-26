@@ -11,31 +11,50 @@
   </ion-navbar>
 
 </ion-header>
+<ion-content>
+<ion-card *ngIf="post">
+
+    <ion-item (click)= "selectPost(post.key)" >
+      <ion-avatar item-start>
+          <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" style="width: 4em; height: 4em">
+        </ion-avatar>
+      <h2>{{post.fullname}} </h2>
+      <p>{{post.title}}</p>
+    </ion-item>
 
 
-<ion-content padding>
-  <div *ngIf="post">
-    <div>
-      {{post.fullname}}
-    </div>
-    <div>
-      {{post.title}}
-    </div>
-    <div>
-      {{post.content}}
-    </div>
-  </div>
+    <ion-card-content (click)= "selectPost(post.key)" >
+      <p>{{post.content}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div> Like</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small (click)= "selectPost(post.key)">
+          <ion-icon name="text"></ion-icon>
+          <div> Comment</div>
+        </button>
+      </ion-col>
+
+    </ion-row>
+    <p text-right >{{ post.time}}</p>
+  </ion-card>
 
  
 
 
-    <ion-card *ngFor="let post of (posts | async)?.slice().reverse()">
+    <ion-card *ngFor="let post of (posts | async)?.slice().reverse()" style="width: 20em; align-content: center;">
 
-      <ion-item>
+      <ion-item >
         <ion-avatar item-start>
-          <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" />
+          <img src="http://cdn.onlinewebfonts.com/svg/img_454313.png" />
         </ion-avatar>
-        <p>{{ post.payload.val().fullname}}</p>
+        <p>{{ post.payload.val().fullname}} commented</p>
       </ion-item>
       
       <ion-card-content >

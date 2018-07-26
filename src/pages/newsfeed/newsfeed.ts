@@ -1,4 +1,3 @@
-import { CommentsPage } from './../comments/comments';
 import { Observable } from 'rxjs';
 import { PostPage } from './../post/post';
 import { PostProvider } from './../../providers/post/post';
@@ -36,14 +35,20 @@ export class NewsfeedPage {
       this.posts = PostProvider.getPosts();
       this.currentUserInfo = auth.getExtraUserData();
       const key = navParams.get('key');
- 
+      PostProvider.getPostsByKey(key).subscribe((post) => {
+        if (!post) {
+          this.post = null;
+        } else {
+          this.post = post.payload.val();
+        }
+      });
     }
   
   getPosts() {
     this.PostProvider.getPosts();
   }
   selectPost(key) {
-    this.navCtrl.push(CommentsPage, {
+    this.navCtrl.push(PostPage, {
       key
     });
   }
