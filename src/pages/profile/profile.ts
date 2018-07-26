@@ -23,13 +23,17 @@ export class ProfilePage {
   private post: PostProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
-  }
-
   returnUser() {
     this.auth.getEmail()
   }
-
+  
+  logOut() {
+    this.auth.signOut().then(
+      () => {
+        this.navCtrl.setRoot(LoginPage);
+      }
+    );
+  }
+  
 
 }
