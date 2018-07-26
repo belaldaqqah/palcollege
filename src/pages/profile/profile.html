@@ -7,15 +7,48 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>profile</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-  <button ion-button (click)="logOut()">
-    Log Off
-  </button>
-</ion-content>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Profile</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+    <ion-card style="background:#6e9fef" class="profile-top">
+      <ion-row>
+        <ion-col>
+          <div class="profile-photo">
+            <img style="width: 35%; height: 35%;" src="../../assets/imgs/graduates.png">
+            <ion-col no-padding>
+                <ion-item style="background:#6e9fef">
+                  <h4 style="text-align: center	"> belal.daqqah</h4>
+                </ion-item>
+              </ion-col>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-list class="profile-detail">
+        <ion-item icon-left>
+            <h4><ion-icon name="quote"></ion-icon>Bio</h4>
+            <p> I am an ambitious Palestinian freshman. I am always willing to answer your questions about the college application  </p>
+        </ion-item>
+        <ion-item icon-left>
+            <h4><ion-icon name="school"></ion-icon>University</h4>
+            <p> Brown University </p>
+        </ion-item>
+        <ion-item icon-left>
+            <h4><ion-icon name="flask"></ion-icon>Major</h4>
+            <p> Nuclear Engineering </p>
+        </ion-item>
+      <ion-item icon-left>
+        <h4><ion-icon name="mail"></ion-icon>Email Address</h4>
+            <p> E-mail </p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  
