@@ -14,7 +14,7 @@
 <ion-content>
 <ion-card *ngIf="post">
 
-    <ion-item (click)= "selectPost(post.key)" >
+    <ion-item  >
       <ion-avatar item-start>
           <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" style="width: 4em; height: 4em">
         </ion-avatar>
@@ -23,7 +23,7 @@
     </ion-item>
 
 
-    <ion-card-content (click)= "selectPost(post.key)" >
+    <ion-card-content >
       <p>{{post.content}}</p>
     </ion-card-content>
 
@@ -35,7 +35,7 @@
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-start clear small (click)= "selectPost(post.key)">
+        <button ion-button icon-start clear small>
           <ion-icon name="text"></ion-icon>
           <div> Comment</div>
         </button>

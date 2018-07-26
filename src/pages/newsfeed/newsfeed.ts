@@ -1,3 +1,4 @@
+import { CommentsPage } from './../comments/comments';
 import { Observable } from 'rxjs';
 import { PostPage } from './../post/post';
 import { PostProvider } from './../../providers/post/post';
@@ -48,7 +49,7 @@ export class NewsfeedPage {
     this.PostProvider.getPosts();
   }
   selectPost(key) {
-    this.navCtrl.push(PostPage, {
+    this.navCtrl.push(CommentsPage, {
       key
     });
   }
