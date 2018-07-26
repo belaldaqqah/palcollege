@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>commentsPage</ion-title>
+  <ion-navbar >
+    <ion-title *ngIf="post">{{post.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,8 +18,8 @@
       <ion-avatar item-start>
           <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" style="width: 4em; height: 4em">
         </ion-avatar>
-      <h2>{{post.fullname}} </h2>
-      <p>{{post.title}}</p>
+      <h2> {{post.title}}</h2>
+      <p>{{post.fullname}}</p>
     </ion-item>
 
 
@@ -42,7 +42,7 @@
       </ion-col>
 
     </ion-row>
-    <p text-right >{{ post.time}}</p>
+    <p style="padding: 0.5em; font-size: 0.7em; color: #666666; float: right" >{{ post.time}}</p>
   </ion-card>
 
 
@@ -72,6 +72,6 @@
       </ion-card-content>
 
 
-      <p> {{comment.payload.val().time}}</p>
+      <p style="padding: 0.5em; font-size: 0.7em; color: #666666; float: right"> {{comment.payload.val().time}}</p>
     </ion-card>
 </ion-content>
