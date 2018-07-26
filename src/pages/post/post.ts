@@ -18,8 +18,9 @@ export class PostPage {
  Post: string;
  title: string;
  fullname:string;
- currentUserInfo: Observable<any>
+ currentUserInfo: Observable<any>;
  content: string;
+ time: string;
  @HostListener('input', ['$event.target'])
  onInput(textArea:HTMLTextAreaElement):void {
    this.adjust();
@@ -31,7 +32,6 @@ export class PostPage {
   public element:ElementRef){
   this.posts = PostProvider.getPosts(),
   this.currentUserInfo = auth.getExtraUserData() 
-  
  }
 
  ngOnInit():void {
@@ -48,6 +48,8 @@ adjust():void {
  addPost(name) {
     this.auth.getExtraUserData().pipe(take(1)).subscribe((userInfo) => {
       let fullname;
+      let date = new Date().toLocaleDateString();
+      console.log(date);
       if (userInfo == null) {
         fullname = this.auth.getEmail();
       } else {
@@ -57,6 +59,7 @@ adjust():void {
         fullname: fullname,
         title: this.title,
         content: this.content,
+        time: date
         
       }).then((post) => {
           this.closeModal(true);
@@ -71,10 +74,6 @@ adjust():void {
 
 closeModal(didPost = false){
   this.view.dismiss(didPost);
-}
-
-ionViewDidLoad() {
-  console.log('ionViewDidLoad ShoppingListPage');
 }
 
 

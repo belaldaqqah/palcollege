@@ -9,10 +9,6 @@
   <ion-navbar>
     <ion-title>Newsfeed</ion-title> 
   </ion-navbar>
-  <button ion-button round (click)="logOut()">
-      Log Off
-    </button>
-
 </ion-header>
 
 <ion-content>
@@ -24,7 +20,7 @@
           <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" />
         </ion-avatar>
       <h2>{{ post.payload.val().title}}</h2>
-      <p>{{ post.payload.val().fullname}}</p>
+      <p>{{ post.payload.val().fullname}}, {{ post.payload.val().time}}</p>
     </ion-item>
 
 
@@ -46,12 +42,11 @@
           <div>4 Comments</div>
         </button>
       </ion-col>
-      <ion-col center text-center>
+      <!-- <ion-col center text-center>
         <ion-note>
-          11h ago
+          {{ post.payload.val().time}}
         </ion-note>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
-
   </ion-card>
 </ion-content>

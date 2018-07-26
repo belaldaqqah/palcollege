@@ -34,6 +34,7 @@ return this.db.list('posts').push({
   fullname: post.fullname,
   title: post.title,
   content: post.content,
+  time: post.time
 });
 }
 
