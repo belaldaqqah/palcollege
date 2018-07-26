@@ -1,3 +1,4 @@
+import { PostProvider } from './../../providers/post/post';
 import { AuthProvider } from './../../providers/auth/auth';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
@@ -16,19 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-  private auth: AuthProvider) {
+  constructor(public navCtrl: NavController,
+  public navParams: NavParams,
+  private auth: AuthProvider,
+  private post: PostProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
-  logOut() {
-    this.auth.signOut().then(
-      () => {
-        this.navCtrl.setRoot(LoginPage);
-      }
-    );
+
+  returnUser() {
+    this.auth.getEmail()
   }
+
 
 }
