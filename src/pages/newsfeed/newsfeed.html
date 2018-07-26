@@ -32,6 +32,7 @@
           <p>
           {{ post.payload.val().content}}
           </p>
+        
         </ion-card-content>
         
       <!-- </ion-item> -->
@@ -57,14 +58,13 @@
           <div>4 Comments</div>
         </button>
       </ion-col>
-      <ion-col center text-center>
-        <ion-note>
-          <ion-input type="time" [(ngModel)]='time' 
-          (change)='onChangeTime($event.target.value)'>
-       </ion-input>
-        </ion-note>
-      </ion-col>
+     
     </ion-row>
 
+    <ion-row center text-center>
+      <ion-note>
+        {{ post.payload.val().time}}
+      </ion-note>
+    </ion-row>
   </ion-card>
 </ion-content>
