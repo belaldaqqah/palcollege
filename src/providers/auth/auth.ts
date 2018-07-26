@@ -37,6 +37,7 @@ export class AuthProvider {
       Full_Name: extraUserInfo.fullname,
       university: extraUserInfo.university,
       major: extraUserInfo.major,
+      bio: extraUserInfo.bio
     })
   })
 
@@ -53,6 +54,8 @@ registerstudent(credentials, birthdate, extraUserInfo) {
       Birthdate: birthdate,
       Full_Name: extraUserInfo.fullname,
       Highschool: extraUserInfo.highschool,
+      bio:extraUserInfo.bio,
+      
     })
   })
 }
@@ -62,7 +65,7 @@ registerstudent(credentials, birthdate, extraUserInfo) {
   return this.afAuth.auth.signOut();
 }
 
- getEmail() {
+getEmail() {
   return this.user && this.user.email;
 }
 
@@ -74,8 +77,11 @@ getUid() {
 getExtraUserData() {
   return this.db.object('users/' + this.getUid()).valueChanges();
 }
-
-
-
+ 
 
 }
+
+
+
+
+

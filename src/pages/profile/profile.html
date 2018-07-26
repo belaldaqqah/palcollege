@@ -7,7 +7,7 @@
 
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar >
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -21,14 +21,16 @@
   
   
   <ion-content>
-    <ion-card style="background:#6e9fef" class="profile-top">
+    <ion-card style="background:#009384" class="profile-top">
       <ion-row>
         <ion-col>
           <div class="profile-photo">
             <img style="width: 35%; height: 35%;" src="../../assets/imgs/graduates.png">
             <ion-col no-padding>
-                <ion-item style="background:#6e9fef">
-                  <h4 style="text-align: center	"> belal.daqqah</h4>
+                <ion-item style="background:#009384
+                ">
+                  <h4 style="text-align: center" *ngIf="userData && userData.Full_Name"> 
+                    {{userData.Full_Name}}</h4>
                 </ion-item>
               </ion-col>
           </div>
@@ -37,25 +39,30 @@
     </ion-card>
     <ion-list class="profile-detail">
         <ion-item icon-left>
-            <h4><ion-icon name="quote"></ion-icon>Bio</h4>
-            <p> I am an ambitious Palestinian freshman. I am always willing to answer your questions about the college application  </p>
+            <h4><ion-icon name="quote" *ngIf="userData && userData.bio"></ion-icon>Bio</h4>
+            <p> {{userData.bio}} </p>
         </ion-item>
-        <ion-item icon-left>
+        <ion-item *ngIf="userData && userData.university" icon-left>
             <h4><ion-icon name="school"></ion-icon>University</h4>
-            <p> Brown University </p>
+            <p> {{userData.university}} </p>
         </ion-item>
-        <ion-item icon-left>
+        <ion-item *ngIf="userData && userData.Highschool" icon-left>
+            <h4><ion-icon name="school"></ion-icon>High School</h4>
+            <p> {{userData.Highschool}} </p>
+        </ion-item>
+        <ion-item *ngIf="userData && userData.major" icon-left>
             <h4><ion-icon name="flask"></ion-icon>Major</h4>
-            <p> Nuclear Engineering </p>
+            <p>{{userData.major}}</p>
         </ion-item>
       <ion-item icon-left>
         <h4><ion-icon name="mail"></ion-icon>Email Address</h4>
-            <p> E-mail </p>
+            <p> {{email}} </p> 
       </ion-item>
     </ion-list>
 
-    <button ion-button round (click)="logOut()" style="margin-left: 30%">
+    <button ion-button round (click)="logOut()" style="margin-left: 30%;">
         Log Off
       </button>
+
   </ion-content>
   

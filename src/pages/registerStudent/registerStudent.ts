@@ -17,6 +17,7 @@ export class RegisterPage {
   fullname: string;
   birthdate: string;
   highschool: string;
+  bio:string;
 
   constructor(
     public navCtrl: NavController,
@@ -34,8 +35,9 @@ export class RegisterPage {
     const extraUserInfo = {
       fullname: this.fullname,
       highschool:this.highschool,
+      bio: this.bio
     };
-    this.auth.registergrad(credentials, this.birthdate, extraUserInfo)
+    this.auth.registerstudent(credentials, this.birthdate, extraUserInfo)
       .then(
         () => {
           this.navCtrl.setRoot(TabsPage);
