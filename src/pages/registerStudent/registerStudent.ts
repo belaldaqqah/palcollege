@@ -35,7 +35,7 @@ export class RegisterPage {
       fullname: this.fullname,
       highschool:this.highschool,
     };
-    this.auth.registergrad(credentials, this.birthdate, extraUserInfo)
+    this.auth.registerstudent(credentials, this.birthdate, extraUserInfo)
       .then(
         () => {
           this.navCtrl.setRoot(TabsPage);
