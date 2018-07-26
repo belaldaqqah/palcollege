@@ -16,29 +16,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-card  *ngFor="let post of posts | async">
+  <ion-card  *ngFor="let post of (posts | async)?.slice().reverse()">
 
     <ion-item>
       <ion-avatar item-left>
         <img src="http://www.patriotsbandboosters.org/images/icons/student_256.png" />
       </ion-avatar>
-     <h1>{{ post.payload.val().fullname }}</h1>
-     <h1>{{ post.payload.val().title }}</h1>
-    </ion-item> 
-    <ion-list>
-      <ion-item-sliding >
-        <ion-item (click)="selectPost(post.key)">
-          <ion-card-content>
-            {{ post.payload.val().content}}
-          </ion-card-content>
-        </ion-item>
-        <ion-item-options side="right">
-          <button ion-button color="danger" icon-only (click)="removePost(post.key)">
-            <ion-icon name="trash"></ion-icon>
-          </button>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-list>
+      <h3>{{ post.payload.val().fullname }}</h3>
+      <ion-card-title>{{ post.payload.val().title }}</ion-card-title>
+
+
+        <ion-card-content>
+          <p>
+          {{ post.payload.val().content}}
+          </p>
+        </ion-card-content>
+        
+      <ion-item-options side="right">
+        <button ion-button color="danger" icon-only (click)="removePost(post.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+  </ion-item>
 
 
 
@@ -57,7 +56,9 @@
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-          11h ago
+          <ion-input type="time" [(ngModel)]='time' 
+          (change)='onChangeTime($event.target.value)'>
+       </ion-input>
         </ion-note>
       </ion-col>
     </ion-row>

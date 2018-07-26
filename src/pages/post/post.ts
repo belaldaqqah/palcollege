@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ViewController } from 'ionic-angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+import {ElementRef, HostListener, Directive, OnInit} from '@angular/core';
 
 
 @IonicPage()
@@ -12,21 +13,37 @@ import { take } from 'rxjs/operators';
  templateUrl: 'post.html',
 })
 export class PostPage {
+
  posts: Observable<any>;
  Post: string;
  title: string;
  fullname:string;
  currentUserInfo: Observable<any>
  content: string;
-
+ @HostListener('input', ['$event.target'])
+ onInput(textArea:HTMLTextAreaElement):void {
+   this.adjust();
+ }
  constructor(public navCtrl: NavController, 
   private auth: AuthProvider, 
   public PostProvider: PostProvider, 
-  private view: ViewController){
+  private view: ViewController,
+  public element:ElementRef){
   this.posts = PostProvider.getPosts(),
   this.currentUserInfo = auth.getExtraUserData() 
+  
  }
 
+ ngOnInit():void {
+  setTimeout(() => this.adjust(), 0);
+}
+
+adjust():void {
+  let textArea = this.element.nativeElement.getElementsByTagName('textarea')[0];
+  textArea.style.overflow = 'hidden';
+  textArea.style.height = 'auto';
+  textArea.style.height = textArea.scrollHeight + "px";
+}
 
  addPost(name) {
     this.auth.getExtraUserData().pipe(take(1)).subscribe((userInfo) => {
@@ -40,6 +57,7 @@ export class PostPage {
         fullname: fullname,
         title: this.title,
         content: this.content,
+        
       }).then((post) => {
           this.closeModal(true);
         });
@@ -58,6 +76,7 @@ closeModal(didPost = false){
 ionViewDidLoad() {
   console.log('ionViewDidLoad ShoppingListPage');
 }
+
 
 
 }
