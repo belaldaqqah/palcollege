@@ -1,5 +1,5 @@
 page-newsfeed {
-    $background-color: #3c353c;
+    background-color: #3c353c;
 }
 .ios, .md {
  
@@ -21,9 +21,7 @@ page-newsfeed {
             -webkit-line-clamp: 5; /* number of lines to show */
             line-height: 1.5em;     /* fallback */
             max-height: 7.5em;  
-
             
-
 
     }
     .ios, .md {
@@ -31,7 +29,6 @@ page-newsfeed {
         page {
      
             .header-image {
-                background-image: url(https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950);
                 height: 40vh;
             }
 

@@ -22,6 +22,7 @@ export class PostProvider {
   
 getPosts() {
   return this.db.list('posts').snapshotChanges();
+  
 }
 
 getPostsByKey(key) {
